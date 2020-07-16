@@ -1,0 +1,49 @@
+//here goes specific style for home page
+.section-about {
+    //background-color: $color-light-gray;
+    padding: 20rem 0;
+    // margin-top: -30vh;
+}
+
+.section-features {
+    padding: 20rem 0;
+    /*linear gradient on top, img below*/
+    background-image: linear-gradient(to right bottom, rgba($color-dark-blue, .8), rgba($color-blue, .4)), url(../img/gustav-nilsson-7MrkQB62c9M-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    /*clip a part of the hero picture*/
+    transform: skewY(-3deg);
+    //direct child selector
+    &>* {
+        transform: skewY(3deg);
+    }
+}
+
+.section-tours {
+    background-color: rgba($color-light-gray, .6);
+    padding: 25rem 0 25rem 0;
+    margin-top: -10rem;
+}
+
+//parent av bg-video component
+.section-stories {
+    padding: 15rem 0;
+    position: relative;
+}
+
+.section-book {
+    padding: 15rem 0;
+    background-image: linear-gradient(45deg, $color-blue, $color-dark-blue);
+}
+
+.book {
+    background-image: linear-gradient(105deg, rgba($color-white, .8) 0%, rgba($color-white, .8) 50%, transparent 50%), url(../img/jonas-jacobsson-20qv9cTILhU-unsplash.jpg);
+    background-size: cover;
+    border-radius: 3px;
+    box-shadow: $shadow3;
+    height: 50rem;
+    &__form {
+        width: 50%;
+        padding: 6rem;
+    }
+}

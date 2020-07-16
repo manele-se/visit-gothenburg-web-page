@@ -1,0 +1,65 @@
+//here goeas all code relating to typoghraphy
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: $font-size-main;
+    line-height: 1.7;
+    color: #333;
+    padding: 3rem;
+}
+
+.heading-primary {
+    color: $color-white;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+    &--main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 700;
+        letter-spacing: 4rem;
+        animation-name: moveInLeft;
+        animation-duration: 1.5s;
+        animation-delay: .2s;
+        /*animation-iteration-count: 3;*/
+        animation-timing-function: ease-out;
+        font-family: 'Open Sans', sans-serif;
+    }
+    &--sub {
+        display: blocK;
+        font-size: 2rem;
+        font-weight: 400;
+        letter-spacing: .6rem;
+        animation: moveInButton 1.5s .3s ease-in;
+    }
+}
+
+.heading-secondary {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    ;
+    display: inline-block;
+    background-image: linear-gradient(to right, $color-dark-blue, $color-blue);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: all .2sec;
+    &:hover {
+        transform: skewY(2deg) skewX(4deg) scale(1.1);
+        text-shadow: .5rem 1rem 1rem rgba($color-black, .2);
+    }
+}
+
+.heading-tertiary {
+    font-size: $font-size-main;
+    text-transform: uppercase;
+}
+
+.paragraph {
+    font-size: 1.5rem;
+    text-align: justify;
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+}

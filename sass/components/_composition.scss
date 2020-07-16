@@ -1,0 +1,35 @@
+.composition {
+    position: relative;
+    &__photo {
+        width: 25vw;
+        box-shadow: 0 1.5rem 4rem rgba($color-dark-blue, .35);
+        border-radius: 2px;
+        position: absolute;
+        z-index: 5;
+        transition: all .2s;
+        outline-offset: 2rem; //give space between img and border
+        &--p1 {
+            left: 0;
+            top: -2rem;
+        }
+        &--p2 {
+            left: 25rem;
+            top: 2rem;
+        }
+        //why % doens't work. it doens't scale
+        &--p3 {
+            left: 5rem;
+            top: 10rem;
+        }
+        &:hover {
+            outline: 1.5rem solid $color-blue;
+            transform: scale(1.05) translateY(-.5rem);
+            box-shadow: 0 2.5rem 4rem rgba($color-dark-blue, .45);
+            z-index: 10;
+        }
+    }
+    //select the image not hovered
+    &:hover &__photo:not(:hover) {
+        transform: scale(.9);
+    }
+}

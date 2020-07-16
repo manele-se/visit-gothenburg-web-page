@@ -1,0 +1,27 @@
+.header {
+    height: 95vh;
+    /*linear gradient on top, img below*/
+    background-image: linear-gradient(to right bottom, rgba($color-dark-blue, .9), rgba($color-blue, .6)), url(../img/jonathan-noack-36ftAXb1tUc-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    /*clip a part of the hero picture*/
+    clip-path: polygon(0 0, 100% 0, 100% 75rem, 0 100%);
+    position: relative;
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+    &__logo {
+        height: 8.5rem;
+        animation: moveInLeft .9s ease-in;
+    }
+    &__text-box {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /*in relation to the element*/
+        text-align: center;
+    }
+}

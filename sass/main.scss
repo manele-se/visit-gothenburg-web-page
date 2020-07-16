@@ -1,0 +1,46 @@
+/*palette: 
+
+https://goteborg.se/wps/portal/enhetssida/grafisk-profil/grafisk-profil
+gtb blue: #0094d8
+#0086c3
+#0078bd
+light blue: #0076bc
+#057fa8
+dark blue #005799
+gray:#e5e5e5
+#f5f5f5
+#3c5463
+light blue marine: #4daca0
+yellow:#f5c635
+pink:#ae446a
+violet: #674b99
+light green:#b8e1c8
+
+font: Gotham for header
+Open Sans for text.
+Caslon for bigger text or reports 
+
+
+*/
+
+
+/*do a reset with the universal selector. 
+Each browser apply their own property*/
+
+@import "abstracts/functions";
+@import "abstracts/mixin";
+@import "abstracts/variables";
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+@import "pages/home";
+@import "components/button";
+@import "components/composition";
+@import "components/story";
+@import "components/form";
+@import "components/feature-box";
+@import "components/bg-video";
+@import "components/card";
+@import "layout/header";
+@import "layout/grid";
