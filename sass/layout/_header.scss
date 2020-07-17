@@ -9,11 +9,10 @@
     position: relative;
     &__logo-box {
         position: absolute;
-        top: 4rem;
-        left: 4rem;
+        left: 2rem;
     }
     &__logo {
-        height: 8.5rem;
+        height: 20rem;
         animation: moveInLeft .9s ease-in;
     }
     &__text-box {
