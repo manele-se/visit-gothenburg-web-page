@@ -1,22 +1,33 @@
 .row {
-    max-width: $grid-with;
+    max-width: $grid-width;
     margin: 0 auto;
     margin-bottom: $gutter-vertical;
+    @include respond(tab-port) {
+        max-width: $grid-width-small;
+        padding: 3rem;
+    }
     &:not(:last-child) {
         margin-bottom: $gutter-vertical;
+        @include respond(tab-port) {
+            margin-bottom: $gutter-vertical-small;
+        }
     }
     @include clearfix;
     //select all the class attribute which start with col. class*= everything which contains. class$= ends with
     [class^="col-"] {
         float: left;
-    }
-    .col-1-of-2 {
-        width: calc((100% - #{$gutter-horizontal}) / 2);
         &:not(:last-child) {
             margin-right: $gutter-horizontal;
         }
+        @include respond(tab-port) {
+            width: 100% !important;
+            margin-right: 0;
+            margin-bottom: $gutter-vertical-small;
+        }
     }
-    //does not working
+    .col-1-of-2 {
+        width: calc((100% - #{$gutter-horizontal}) / 2);
+    }
     .col-1-of-3 {
         width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
         &:not(:last-child) {

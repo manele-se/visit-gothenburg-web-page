@@ -7,10 +7,18 @@
     padding: 6rem;
     padding-left: 9rem;
     font-size: $font-size-main;
-    transform: skewX(-10deg);
+    transform: skewX(-8deg);
     //skew the child element in the other direction
     &>* {
-        transform: skewx(10deg);
+        transform: skewx(8deg);
+    }
+    @include respond(tab-port) {
+        padding: 4rem;
+        width: 100%;
+        transform: skewX(-5deg);
+        &>* {
+            transform: skewx(5deg);
+        }
     }
     &__shape {
         background-color: green;
@@ -22,7 +30,7 @@
         clip-path: circle(50%);
         width: 15rem;
         height: 15rem;
-        transform: translate(-3rem) skewx(10deg);
+        transform: translate(-3rem) skewx(8deg);
         position: relative;
     }
     &__img {
@@ -37,13 +45,10 @@
         }
     }
     &__text {
-        transform: skewx(10deg);
+        transform: skewx(8deg);
     }
     &__caption {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, 0);
+        @include absRight;
         color: $color-white;
         font-size: 1.8rem;
         text-transform: uppercase;

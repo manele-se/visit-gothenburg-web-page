@@ -3,6 +3,9 @@
     //background-color: $color-light-gray;
     padding: 20rem 0;
     // margin-top: -30vh;
+    @include respond(tab-port) {
+        padding: 15rem 0;
+    }
 }
 
 .section-features {
@@ -17,24 +20,36 @@
     &>* {
         transform: skewY(3deg);
     }
+    @include respond(tab-port) {
+        padding: 10rem 0;
+    }
 }
 
 .section-tours {
     background-color: rgba($color-light-gray, .6);
     padding: 25rem 0 25rem 0;
     margin-top: -10rem;
+    @include respond(tab-port) {
+        padding: 15rem 0 15rem 0;
+    }
 }
 
 //parent av bg-video component
 .section-stories {
     padding: 15rem 0;
     position: relative;
+    @include respond(tab-port) {
+        padding: 10rem 0;
+    }
 }
 
 .section-book {
     padding: 15rem 0;
     clip-path: polygon(0 0, 100% 0, 100% 75rem, 0 100%);
     background-image: linear-gradient(45deg, $color-blue, $color-dark-blue);
+    @include respond(tab-port) {
+        padding: 5rem 0;
+    }
 }
 
 .book {
@@ -46,5 +61,9 @@
     &__form {
         width: 50%;
         padding: 6rem;
+        @include respond(tab-land) {
+            width: 80%;
+            padding: 2rem;
+        }
     }
 }

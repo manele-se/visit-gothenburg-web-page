@@ -64,15 +64,12 @@
                 left: 0;
                 top: 0;
                 &::after {
+                    @include absCenter;
                     content: "";
                     display: block;
                     border-radius: 50%;
                     height: 1rem;
                     width: 1rem;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
                     background-color: $color-blue;
                     opacity: 0;
                     transition: opacity .3s;

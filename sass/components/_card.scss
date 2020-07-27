@@ -3,6 +3,7 @@
     perspective: 150rem;
     position: relative;
     height: 52rem;
+    box-shadow: $shadow1;
     &__side {
         background-color: $color-white;
         height: 52rem;
@@ -13,7 +14,6 @@
         width: 100%;
         backface-visibility: hidden; //hide the backpart of an element
         border-radius: 3px;
-        box-shadow: $shadow1;
         overflow: hidden;
         &--front {
             background-color: $color-white;
@@ -101,10 +101,7 @@
     }
     //back
     &__cta {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        @include absCenter;
     }
     &__price-box {
         text-align: center;
@@ -114,6 +111,41 @@
     &__price-only {
         font-size: 1.4rem;
         text-transform: uppercase;
+    }
+    &__price-value {
+        font-size: 6rem;
+        font-weight: 100;
+    }
+    @include respond(tab-port) {
+        height: auto;
+        &__side {
+            height: auto;
+            position: relative;
+            box-shadow: $shadow1;
+            &--front {
+                background-color: $color-white;
+            }
+            &--back {
+                transform: rotateY(0deg);
+            }
+        }
+        //when the card is hovered the card side will be transformed
+        &:hover &__side--front {
+            transform: rotateY(0);
+        }
+        //back
+        &__cta {
+            @include absCenter;
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translate(0);
+            width: 100%;
+            padding: 4rem;
+        }
+        &__price-box {
+            margin-bottom: 3rem;
+        }
     }
     &__price-value {
         font-size: 6rem;
