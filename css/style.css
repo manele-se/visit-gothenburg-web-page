@@ -1,0 +1,177 @@
+/*palette: 
+
+https://goteborg.se/wps/portal/enhetssida/grafisk-profil/grafisk-profil
+gtb blue: #0094d8
+#0086c3
+#0078bd
+light blue: #0076bc
+#057fa8
+dark blue #005799
+gray:#e5e5e5
+#f5f5f5
+#3c5463
+light blue marine: #4daca0
+yellow:#f5c635
+pink:#ae446a
+violet: #674b99
+light green:#b8e1c8
+
+font: Gotham for header
+Open Sans for text.
+Caslon for bigger text or reports 
+
+
+*/
+/*do a reset with the universal selector. 
+Each browser apply their own property*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  /*1rem=10px*/ }
+
+/*we put the font here, because the font will be inherited*/
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #333;
+  padding: 3rem;
+  box-sizing: border-box; }
+
+.header {
+  height: 95vh;
+  /*linear gradient on top, img below*/
+  background-image: linear-gradient(to right bottom, #005799, #0085c343), url(../img/jonathan-noack-36ftAXb1tUc-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  /*clip a part of the hero picture*/
+  clip-path: polygon(0 0, 100% 0, 100% 60rem, 0 100%);
+  position: relative; }
+
+.header__logo-box {
+  position: absolute;
+  top: 4rem;
+  left: 4rem; }
+
+.header__logo {
+  height: 8.5rem;
+  animation: moveInLeft .9s ease-in; }
+
+.header__text-box {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*in relation to the element*/
+  text-align: center; }
+
+.heading-primary {
+  color: #ffff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+
+.heading-primary--main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 700;
+  letter-spacing: 4rem;
+  animation-name: moveInLeft;
+  animation-duration: 1.5s;
+  animation-delay: .2s;
+  /*animation-iteration-count: 3;*/
+  animation-timing-function: ease-out;
+  font-family: 'Open Sans', sans-serif; }
+
+.heading-primary--sub {
+  display: blocK;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: .6rem;
+  animation: moveInButton 1.5s .3s ease-in; }
+
+/*animation for the main heading*/
+@keyframes moveInLeft {
+  /*beginning of the animation*/
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(0.5rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  /*beginning of the animation*/
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-0.5rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInButton {
+  /*beginning of the animation*/
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+/*psudo-classes*/
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 2.5rem;
+  transition: all .1s;
+  position: relative; }
+
+.btn:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.35); }
+
+.btn:active {
+  transform: translateY(-0.2rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4); }
+
+.btn--white {
+  background-color: white;
+  color: #444; }
+
+/*psudo elements are treated like child element*/
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 2.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s; }
+
+.btn--white::after {
+  background-color: white; }
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0; }
+
+.btn--animated {
+  animation: moveInButton .5s ease-out .75s;
+  animation-fill-mode: backwards; }
